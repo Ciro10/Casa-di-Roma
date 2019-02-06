@@ -34,11 +34,11 @@ namespace Casa_di_Roma
                                 options.MinimumSameSitePolicy = SameSiteMode.None;
                         });
 
-                        services.AddDbContext<ApplicationDbContext>(options =>
+                        services.AddDbContext<Casa_di_RomaDbContext>(options =>
                             options.UseSqlServer(
                                 Configuration.GetConnectionString("DefaultConnection")));
                         services.AddDefaultIdentity<IdentityUser>()
-                            .AddEntityFrameworkStores<ApplicationDbContext>();
+                            .AddEntityFrameworkStores<Casa_di_RomaDbContext>();
 
                         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
                 }

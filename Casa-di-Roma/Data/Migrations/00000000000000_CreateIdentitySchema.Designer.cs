@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Casa_di_Roma.Data.Migrations
 {
-        [DbContext(typeof(ApplicationDbContext))]
+        [DbContext(typeof(Casa_di_RomaDbContext))]
         [Migration("00000000000000_CreateIdentitySchema")]
         partial class CreateIdentitySchema
         {

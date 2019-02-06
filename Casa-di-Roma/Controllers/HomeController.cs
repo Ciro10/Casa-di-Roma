@@ -5,14 +5,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Casa_di_Roma.Models;
+using Casa_di_Roma.Data;
 
 namespace Casa_di_Roma.Controllers
 {
         public class HomeController : Controller
         {
+                private Casa_di_RomaDbContext context;
+
+                public HomeController(Casa_di_RomaDbContext dbContext)
+                {
+                        context = dbContext;
+                        //  MenuItem.SeedData(context);
+                        SeedData.Initialize(context);
+                }
+
+              
+
                 public IActionResult Index()
                 {
-                        return View();
+                        
+                        MenuItem special = context.MenuItems.Single(c => c.Name == "Chicken parmigiana");
+
+                        return View(special);
                 }
 
                 public IActionResult About()
