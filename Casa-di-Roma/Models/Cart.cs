@@ -12,13 +12,13 @@ namespace Casa_di_Roma.Models
 {
                 public int ID { get; set; }
 
-                public List<MenuItem> menuitems;
+                public IList<MenuItem> menuitems;
 
                 public Cart() { }
 
-                public  void Cartadditem(MenuItem menuItem)
+                public   void Cartadditem(MenuItem menuItem)
                 {
-                        menuitems.Add(menuItem);
+                       menuitems.Add(menuItem);
                 }
 
                 private Casa_di_RomaDbContext context;

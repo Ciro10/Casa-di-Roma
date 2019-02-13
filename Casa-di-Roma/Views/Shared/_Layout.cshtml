@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] Casa di Roma</title>
-
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <!--4281 4333 3978 4207 boot-->
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Italiana|Playfair+Display+SC:700|Kreon:700|Thasadith:400i" rel="stylesheet">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -26,13 +28,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Casa_di_Roma</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"></a>
+                <img src="~/images/Casa logo.png" id="logo"/>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="MainMenu">Main Menu</a></li>
+                    <li><a asp-area="" asp-controller="Location" asp-action="Index">Locations</a></li>
+                    <li><a asp-area="" asp-controller="Cart" asp-action="Index">Cart</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

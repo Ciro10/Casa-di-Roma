@@ -24,35 +24,24 @@ namespace Casa_di_Roma.Controllers
 
                 public IActionResult Index()
                 {
-                        
-                        MenuItem special = context.MenuItems.Single(c => c.Name == "Chicken parmigiana");
+                        MenuViewModel homespecial = new MenuViewModel(context);
+                        homespecial.special(context);
 
-                        return View(special);
+                        // MenuItem special = context.MenuItems.Single(c => c.Name == "Chicken parmigiana");
+
+                        return View(homespecial);
                 }
 
-                public IActionResult About()
+                public IActionResult MainMenu()
                 {
-                        ViewData["Message"] = "Your application description page.";
+                        MenuViewModel MainMenu = new MenuViewModel(context);
+                        MainMenu.Load(context);
+                        ViewBag.src = "@";
 
-                        return View();
+                        return View(MainMenu);
                 }
 
-                public IActionResult Contact()
-                {
-                        ViewData["Message"] = "Your contact page.";
+                
 
-                        return View();
-                }
-
-                public IActionResult Privacy()
-                {
-                        return View();
-                }
-
-                [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-                public IActionResult Error()
-                {
-                        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-                }
-        }
+         }
 }

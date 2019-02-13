@@ -3001,25 +3001,26 @@ select[multiple].input-lg {
   }
 }
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Kreon', serif;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3342,9 +3343,12 @@ fieldset[disabled] .btn-warning.focus {
   background-color: #fff;
 }
 .btn-danger {
-  color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+    position: relative;
+    bottom:5px;
+    left: 600px;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
 }
 .btn-danger:focus,
 .btn-danger.focus {
@@ -3972,7 +3976,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: -1px;
 }
 .nav {
-  padding-left: 0;
+  padding-left: 150px;
   margin-bottom: 0;
   list-style: none;
 }
@@ -3982,8 +3986,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li > a {
   position: relative;
-  display: block;
-  padding: 10px 15px;
+  display: inline-block;
+  padding: 10px 50px 0px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -4164,10 +4168,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+    position: relative;
+    min-height: 125px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4180,13 +4185,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-collapse {
-  padding-right: 15px;
-  padding-left: 15px;
-  overflow-x: visible;
-  -webkit-overflow-scrolling: touch;
-  border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    
 }
 .navbar-collapse.in {
   overflow-y: auto;
@@ -4200,7 +4206,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-collapse.collapse {
     display: block !important;
-    height: auto !important;
+    auto !important;
     padding-bottom: 0;
     overflow: visible !important;
   }
@@ -4251,10 +4257,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
@@ -4321,12 +4328,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: .5px -15px;
 }
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  line-height: 80px;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -4361,7 +4368,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li > a {
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
   }
 }
 .navbar-form {
@@ -4589,8 +4596,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+   /* background-color: #222;
+    border-color: #080808;*/
+    background-image: url("/images/wood.jpg");
+    background-size:cover;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -4603,14 +4612,16 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-text {
   color: #9d9d9d;
 }
-.navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
-}
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
-  background-color: transparent;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color:#9d9d9d;
+        font-family: 'Playfair Display SC', serif;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-nav > li > a:focus {
+        color: darkred;
+        background-color: transparent;
+        font-family: 'Playfair Display SC', serif;
+    }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
