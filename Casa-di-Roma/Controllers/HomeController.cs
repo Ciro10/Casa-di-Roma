@@ -16,7 +16,7 @@ namespace Casa_di_Roma.Controllers
                 public HomeController(Casa_di_RomaDbContext dbContext)
                 {
                         context = dbContext;
-                        //  MenuItem.SeedData(context);
+                        
                         SeedData.Initialize(context);
                 }
 
@@ -27,7 +27,7 @@ namespace Casa_di_Roma.Controllers
                         MenuViewModel homespecial = new MenuViewModel(context);
                         homespecial.special(context);
 
-                        // MenuItem special = context.MenuItems.Single(c => c.Name == "Chicken parmigiana");
+                     
 
                         return View(homespecial);
                 }
@@ -36,7 +36,7 @@ namespace Casa_di_Roma.Controllers
                 {
                         MenuViewModel MainMenu = new MenuViewModel(context);
                         MainMenu.Load(context);
-                        ViewBag.src = "@";
+                        
 
                         return View(MainMenu);
                 }

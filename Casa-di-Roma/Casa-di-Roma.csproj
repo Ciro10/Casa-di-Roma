@@ -6,6 +6,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20190130043734_InitialCreate.cs" />
+    <Compile Remove="Data\Migrations\20190130043734_InitialCreate.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190214014207_ShoppingCart.cs" />
+    <Compile Remove="Data\Migrations\20190214014207_ShoppingCart.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190214015331_Cart.cs" />
+    <Compile Remove="Data\Migrations\20190214015331_Cart.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190214024655_TotalQuantity.cs" />
+    <Compile Remove="Data\Migrations\20190214024655_TotalQuantity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190214025313_MenuItems.cs" />
+    <Compile Remove="Data\Migrations\20190214025313_MenuItems.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215020110_UserCart.cs" />
+    <Compile Remove="Data\Migrations\20190215020110_UserCart.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215023644_UserID.cs" />
+    <Compile Remove="Data\Migrations\20190215023644_UserID.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215024146_User.cs" />
+    <Compile Remove="Data\Migrations\20190215024146_User.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215025112_MyUser.cs" />
+    <Compile Remove="Data\Migrations\20190215025112_MyUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215030017_User2.cs" />
+    <Compile Remove="Data\Migrations\20190215030017_User2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215030448_User3.cs" />
+    <Compile Remove="Data\Migrations\20190215030448_User3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215030918_Client.cs" />
+    <Compile Remove="Data\Migrations\20190215030918_Client.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190215032421_Client.cs" />
+    <Compile Remove="Data\Migrations\20190215032421_Client.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />

@@ -1,7 +1,40 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@model Casa_di_Roma.Models.Cart
+
+@if (Model.menuitems.Count == 0)
+{
+        <h2 class="specials-cap titlepage">Your cart is empty</h2>
+}
+else
+{
+
+  <table class="table specials-cap titlepage" style="width: 80%">
+
+    <thead>
+        <tr>
+            <th scope="col">Items</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MenuItem plate in Model.menuitems)
+        {
+            <tr>
+                <td><img src="~/images/'@plate.Name'.jpeg" height="100" width="170" class="cart-img" /></td>
+                <td width="50%">@plate.Name<br />@plate.Description</td>
+                <td>@plate.Quantity</td>
+                <td>@plate.Price.ToString("C")</td>
+            </tr>}
+
+        <tr>
+            <th style="font-size: medium"  scope="row">Total:</th>
+            <td></td>
+            <td></td>
+            <td style="font-weight: 800">@Cart.Total.ToString("C")</td>
+        </tr>
+     </tbody>
+   </table>
 }
 
-<h2 class="specials-cap titlepage">Working on it!</h2>
 

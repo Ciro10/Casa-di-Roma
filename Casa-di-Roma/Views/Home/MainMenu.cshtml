@@ -1,14 +1,13 @@
 ﻿@model Casa_di_Roma.Models.MenuViewModel
-
 <!--3345, 3008  boot-->
 <style>
     img {
         border: 1px solid #ddd;
         border-radius: 4px;
         padding: 5px;
-       
     }
-     {
+
+    {
         display: inline-block;
     }
 </style>
@@ -16,46 +15,47 @@
 <div class="specials-cap titlepage">
 
     <h2 id="menu-title">Main Menu</h2><br />
-    <h3 id="menu-title">Appetizers</h3><br />
+    <h3 id="menu-title Calamari">Appetizers</h3><br />
 
+    <form asp-controller="Cart" asp-action="Index" method="post">
+        @foreach (MenuItem course in Model.Appetizers)
+        {
 
-    @foreach (MenuItem course in Model.Appetizers)
-    {
-        <img src="~/images/'@course.Name'.jpeg" height="120" width="200" />
-        <input type="hidden" name="MenuID" value="@course.ID" />
-        <input class="btn btn-danger" type="button" value="Add to Cart">
-        <h4 class="Item-title">@course.Name</h4>
-        <h4>@course.Description</h4>
-        <h4>@course.Price.ToString("C")</h4><br />
+            <img src="~/images/'@course.Name'.jpeg" height="120" width="200" />
+            <button class="btn btn-danger" type="submit" name="newItem" value="@course.ID">Add to Cart</button>
+            <h4 class="Item-title">@course.Name</h4>
+            <h4 style="width: 60%;">@course.Description</h4>
+            <h4>@course.Price.ToString("C")</h4><br />
 
-    }
+        }
 
-    <h3 id="menu-title">Entreés</h3><br />
+        <h3 id="menu-title">Entreés</h3><br />
 
-    @foreach (MenuItem course in Model.Entrees)
-    {
-        <img src="~/images/'@course.Name'.jpeg" height="120" width="200" />
-        <input type="hidden" name="MenuID" value="@course.ID" />
-        <input class="btn btn-danger" type="button" value="Add to Cart">
-        <h4 class="Item-title">@course.Name</h4>
-        <h4>@course.Description</h4>
-        <h4>@course.Price.ToString("C")</h4><br />
+        @foreach (MenuItem course in Model.Entrees)
+        {
 
-    }
+            <img src="~/images/'@course.Name'.jpeg" height="120" width="200" id="@course.Name" />
+            <button class="btn btn-danger" type="submit" name="newItem" value="@course.ID">Add to Cart</button>
+            <h4 class="Item-title">@course.Name</h4>
+            <h4 style="width: 60%;">@course.Description</h4>
+            <h4>@course.Price.ToString("C")</h4><br />
 
-    <h3 id="menu-title">Desserts</h3><br />
+        }
 
-    @foreach (MenuItem course in Model.Desserts)
-    {
-        <img src="~/images/'@course.Name'.jpeg" height="120" width="200" />
-        <input type="hidden" name="MenuID" value="@course.ID" />
-        <input class="btn btn-danger" type="button" value="Add to Cart">
-        <h4 class="Item-title">@course.Name</h4>
-        <h4>@course.Description</h4>
-        <h4>@course.Price.ToString("C")</h4><br />
+        <h3 id="menu-title">Desserts</h3><br />
 
-    }
+        @foreach (MenuItem course in Model.Desserts)
+        {
+            <img src="~/images/'@course.Name'.jpeg" height="120" width="200" id="@course.Name" />
+            <button class="btn btn-danger" type="submit" name="newItem" value="@course.ID">Add to Cart</button>
+            <h4 class="Item-title">@course.Name</h4>
+            <h4 style="width: 60%;">@course.Description</h4>
+            <h4>@course.Price.ToString("C")</h4><br />
 
+        }
+    </form>
 </div>
 
 <p>Check out the locations for a store near you</p>
+
+

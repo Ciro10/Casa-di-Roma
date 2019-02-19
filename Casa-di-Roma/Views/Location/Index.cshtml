@@ -3,5 +3,102 @@
     ViewData["Title"] = "Index";
 }
 
-<h2 class="specials-cap titlepage">Working on it!</h2>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.2/mapbox-gl-geocoder.css" type="text/css" />
 
+<style>
+    .geocoder {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 50%;
+        margin-left: -25%;
+        top: 120px;
+    }
+    .mapboxgl-ctrl-geocoder { min-width: 100%; }
+
+    .marker {
+        background-image: url('mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+
+<h6 class="titlepage"></h6>
+<div id='map' style='width: 700px; height: 500px;'></div>
+<div id="geocoder" class="geocoder"></div>
+<script>
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoidXp6aSIsImEiOiJjanNiMnByMTkwNW9wNDRwM3lzcjRxb2g1In0.cO9OVwhqwMP_ggVR8yd2gw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-80.2104  , 25.8478 ],
+        zoom: 10
+    });
+
+    
+
+   map.addControl(new MapboxGeocoder({
+   accessToken: mapboxgl.accessToken
+       
+    })); 
+
+
+  
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-80.1578, 25.9124])
+        .addTo(map);
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-80.2543, 25.7494 ])
+        .addTo(map); 
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-80.3103, 25.9263])
+        .addTo(map);
+    
+</script>
+
+
+
+<div style="position: absolute; right: 150px; top: 120px;">
+
+
+        <h2 id="menu-title">Locations</h2><br />
+
+
+        <p class="specials-cap">
+
+        <h5>14776 Biscayne Blvd</h5>
+
+        <h5>North Miami, FL 33181-1218</h5>
+
+        <h5>Open: 11:00 am - 11:00 pm</h5>
+
+        </p><br />
+
+        <p class="specials-cap">
+
+        <h5>2235 SW 37th Ave</h5>
+
+        <h5>Miami, FL 33145-3009</h5>
+
+        <h5>Open: 11:00 am - 11:00 pm</h5>
+
+        </p><br />
+
+        <p class="specials-cap">
+
+            <h5>6868 NW 169th St.</h5>
+
+            <h5>Hialeah, FL, 33015</h5>
+
+        <h5>Open: 11:00 am - 11:00 pm</h5>
+
+        </p>
+</div>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Casa_di_Roma.Data.Migrations
 {
     [DbContext(typeof(Casa_di_RomaDbContext))]
-    [Migration("20190130043734_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190216042922_InitialSetup")]
+    partial class InitialSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,10 @@ namespace Casa_di_Roma.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Client");
+
+                    b.Property<double>("Total");
+
                     b.HasKey("ID");
 
                     b.ToTable("Carts");
@@ -38,13 +42,19 @@ namespace Casa_di_Roma.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("CartID");
+
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
                     b.Property<double>("Price");
 
+                    b.Property<int>("Quantity");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("CartID");
 
                     b.ToTable("MenuItems");
                 });
@@ -212,6 +222,13 @@ namespace Casa_di_Roma.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Casa_di_Roma.Models.MenuItem", b =>
+                {
+                    b.HasOne("Casa_di_Roma.Models.Cart")
+                        .WithMany("Menuitems")
+                        .HasForeignKey("CartID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

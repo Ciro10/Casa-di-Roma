@@ -1,12 +1,11 @@
 ﻿@model Casa_di_Roma.Models.MenuViewModel
-
 <!--4166, 4254 , 4595 boot,-->
 <div class="specials-cap titlepage">
     <h4>
         Whether you are looking to have lunch, to host a rehearsal dinner or an anniversary luncheon, Casa di Roma Restaurant offers a number of possibilities that will surely meet your needs and exceed expectations.<br />
         Our extensive menu and wine list are always crowd-pleasers and will include, but not be limited to, homemade pastas, amazing pizzas. We also offer a variety of meat and vegetarian options plus, of course, our unforgettable desserts.
     </h4>&nbsp;
-    <h2>Our specials</h2>&nbsp;
+    <h2 id="menu-title">Featuring</h2>
 
 </div>
 
@@ -19,20 +18,20 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            
-                <img src= "~/images/'Calamari'.jpeg" alt="ASP.NET" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    @foreach (MenuItem course in Model.Appetizers)
-                    {
-                        <p>
-                            <br />@course.Name<br /> @course.Description<br />&nbsp;
-                        </p>
-                    }
-                </div>
+
+            <a href="/home/MainMenu/#Calamari"><img src="~/images/'Calamari'.jpeg" alt="ASP.NET" class="img-responsive" /></a>
+            <div class="carousel-caption" role="option">
+                @foreach (MenuItem course in Model.Appetizers)
+                {
+                    <p>
+                        <br />@course.Name<br /> @course.Description<br />&nbsp;
+                    </p>
+                }
             </div>
+        </div>
 
         <div class="item">
-            <img src="~/images/'Chicken parmigiana'.jpeg" alt="Visual Studio" class="img-responsive" />
+            <a href="/home/MainMenu/#Shrimp alfredo"><img src="~/images/'Chicken parmigiana'.jpeg" alt="Visual Studio" class="img-responsive" /></a>
             <div class="carousel-caption" role="option">
                 @foreach (MenuItem course in Model.Entrees)
                 {
@@ -43,7 +42,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="~/images/'Tiramisu'.jpeg" alt="Microsoft Azure" class="img-responsive" />
+            <a href="/home/MainMenu/#Tiramisu"><img src="~/images/'Tiramisu'.jpeg" alt="Microsoft Azure" class="img-responsive" /></a>
             <div class="carousel-caption" role="option">
                 @foreach (MenuItem course in Model.Desserts)
                 {
@@ -64,4 +63,13 @@
     </a>
 </div>
 
+<svg height="110" width="1100">
+    <line x1="30" y1="70" x2="1180" y2="70" style="stroke:rgb(0,0,0);stroke-width:2" />
+</svg>
+<h2 id="menu-title">Come &nbsp;join &nbsp;us</h2>
+<img src="~/images/restaurant.jpg" class="img-responsive  " style="width: 100%"/>
+<br /><h4 class="specials-cap ">
+    Enjoy a lovely evening at one of our fine restaurants. Located across the continental United States, just navigate to the locations page to find one near you. Our professional staff will work hard to provide wonderful service, as is their custom.
+    For whatever ocassion let us be your first choice for lunch or dinner. 'Il bon mangare' will be found here at your local Casa di Roma
+</h4><br />
 

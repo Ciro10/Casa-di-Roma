@@ -27,6 +27,12 @@ namespace Casa_di_Roma
                 // This method gets called by the runtime. Use this method to add services to the container.
                 public void ConfigureServices(IServiceCollection services)
                 {
+                        //This is for Session
+
+                        services.AddMvc(); // HERE  HERE  HERE
+                        services.AddDistributedMemoryCache(); // HERE  HERE  HERE
+                        services.AddSession(); // HERE  HERE  HERE
+
                         services.Configure<CookiePolicyOptions>(options =>
                         {
                     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -62,6 +68,10 @@ namespace Casa_di_Roma
                         app.UseCookiePolicy();
 
                         app.UseAuthentication();
+
+                        app.UseSession(); // HERE HERE  HERE  for Session
+
+                      
 
                         app.UseMvc(routes =>
                         {

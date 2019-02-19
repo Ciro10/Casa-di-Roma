@@ -8,7 +8,7 @@ namespace Casa_di_Roma.Models
 {
         public class MenuViewModel
         {
-                public List <MenuItem>Appetizers { get; set; }
+                public IList <MenuItem>Appetizers { get; set; }
 
                 public IList<MenuItem> Entrees { get; set; }
 

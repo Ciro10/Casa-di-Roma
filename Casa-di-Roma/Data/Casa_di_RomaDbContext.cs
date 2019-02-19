@@ -12,7 +12,7 @@ namespace Casa_di_Roma.Data
 
                 public DbSet<MenuItem> MenuItems { get; set; }
 
-                public DbSet<Cart> Carts { get; set; }
+               
 
                 public Casa_di_RomaDbContext(DbContextOptions<Casa_di_RomaDbContext> options)
                     : base(options)

@@ -1,6 +1,7 @@
 ﻿using Casa_di_Roma.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,31 +11,46 @@ namespace Casa_di_Roma.Models
 
     public class Cart
 {
+                
                 public int ID { get; set; }
 
-                public IList<MenuItem> menuitems;
+                public string Basket { get; set; }
 
-                public Cart() { }
+                public List<MenuItem> menuitems { get; set; }
 
-                public   void Cartadditem(MenuItem menuItem)
+                static private List<MenuItem> Menuitems = new List<MenuItem>();
+
+                static public double Total { get; set; }
+
+                
+                public static List<MenuItem> GetAll()
                 {
-                       menuitems.Add(menuItem);
+                        
+                        return Menuitems;
                 }
 
-                private Casa_di_RomaDbContext context;
-
-                public Cart(Casa_di_RomaDbContext dbContext)
+                public static MenuItem GetById(int menuitemId)
                 {
-                        context = dbContext;
+                        return Menuitems.Single(x => x.ID == menuitemId);
                 }
 
-                public void Cartadditem(int id)
+                public static void Add(MenuItem newMenuItem)
                 {
-                        MenuItem YourItem = context.MenuItems.Single(c => c.ID == id);
-                        context.Add(YourItem);
-                        context.SaveChanges();
 
+                        newMenuItem.Quantity++;
+                        Menuitems.Add(newMenuItem);
+
+                                            
+                        Total += newMenuItem.Price;
+                               
                 }
+
+                public static bool Remove(int menuitemId)
+                {
+                        
+                        return Menuitems.Remove(GetById(menuitemId));
+                }
+
                 
 
 }

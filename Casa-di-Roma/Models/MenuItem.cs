@@ -12,6 +12,7 @@ namespace Casa_di_Roma.Models
                 public string Description { get; set; }
                 public double Price { get; set; }
                 public int ID { get; set; }
+                public int Quantity { get; set; }
 
                 public MenuItem(string name, string description, double price)
                 {

@@ -46,7 +46,7 @@ body {
 }
 
 .titlepage {
-    padding-top: 120px;
+    padding-top: 80px;
     position: relative;
     display: inline-block;
 }
@@ -68,4 +68,26 @@ body {
     top:15px;
     border:none !important;
     padding: 0px !important;
+}
+#medialogo {
+    position: relative !important;
+    display: inline-block!important;
+    left: 1020px !important;
+    top: 45px;
+    height: 30px !important;
+    width: 40px !important;
+    border: none !important;
+    padding: 0px !important;
+}
+
+.cart-img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.cart-title {
+    font-family: 'Thasadith', sans-serif;
+    display: inline-block;
+    padding-top: 120px;
 }
