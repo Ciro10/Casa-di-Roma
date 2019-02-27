@@ -26,9 +26,7 @@ namespace Casa_di_Roma.Controllers
                         Cart MyCart = new Cart
                         {
                                 menuitems = Cart.GetAll()
-
                         };
-
 
                         return View(MyCart);
                 }
@@ -39,7 +37,6 @@ namespace Casa_di_Roma.Controllers
                         Cart MyCart = new Cart
                         {
                                 menuitems = Cart.GetAll()
-
                         };
 
                         MenuItem NewItem = context.MenuItems.Single(c => c.ID == newItem);
@@ -52,10 +49,8 @@ namespace Casa_di_Roma.Controllers
                                         Cart.Total += NewItem.Price;
                                         NewItem.Price += NewItem.Price;
 
-
                                         return View(MyCart);
                                 }
-
                         }
 
                         Cart.Add(NewItem);
@@ -63,6 +58,23 @@ namespace Casa_di_Roma.Controllers
                         return View(MyCart);
                 }
 
-                
+
+                [Route("Cart/Remove/{discard}")]
+                public IActionResult Remove(int discard)
+                {
+
+                        MenuItem Olditem = Cart.GetById(discard);
+                        int num = Olditem.Quantity;
+                        double deduct = Olditem.Price * num;
+                        Cart.Total -= deduct;
+                        
+                        Cart.Remove(discard);
+                        
+
+
+                        return Redirect("/Cart");
+                }
+
+
         }
 }

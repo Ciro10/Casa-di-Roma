@@ -91,3 +91,22 @@ body {
     display: inline-block;
     padding-top: 120px;
 }
+
+.footer-bottom {
+    background-color: #0c0c0c;
+    color: #6a737c;
+    box-sizing: content-box !important;
+    position: absolute !important;
+    padding-top: 0px;
+    width: 1800px !important;
+    display: inline-block !important;
+    height: 100px;
+    margin-top: 80px;
+    background-size: cover !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+    left: 0px !important;
+    padding-bottom: 0px !important;
+}

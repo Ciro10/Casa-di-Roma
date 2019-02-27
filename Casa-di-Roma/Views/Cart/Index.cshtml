@@ -14,21 +14,25 @@ else
             <th scope="col">Items</th>
             <th scope="col">Description</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Remove</th>
             <th scope="col">Price</th>
         </tr>
     </thead>
     <tbody>
         @foreach (MenuItem plate in Model.menuitems)
         {
-            <tr>
-                <td><img src="~/images/'@plate.Name'.jpeg" height="100" width="170" class="cart-img" /></td>
-                <td width="50%">@plate.Name<br />@plate.Description</td>
-                <td>@plate.Quantity</td>
-                <td>@plate.Price.ToString("C")</td>
-            </tr>}
+        <tr>
+            <td><img src="~/images/'@plate.Name'.jpeg" height="100" width="170" class="cart-img" /></td>
+            <td width="50%">@plate.Name<br />@plate.Description</td>
+            <td>@plate.Quantity</td>
+            <td><a role="button" asp-controller="Cart" asp-action="Remove"  asp-route-id="@plate.ID"   name="discard" ><img src="~/images/Remove-button.png" height="25" width="25" /></a></td>
+            <td>@plate.Price.ToString("C")</td>
+            
+        </tr>}
 
         <tr>
-            <th style="font-size: medium"  scope="row">Total:</th>
+            <th style="font-size: medium" scope="row">Total:</th>
+            <td></td>
             <td></td>
             <td></td>
             <td style="font-weight: 800">@Cart.Total.ToString("C")</td>

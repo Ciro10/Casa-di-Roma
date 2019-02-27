@@ -24,6 +24,7 @@
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
+        color: red;
     }
 </style>
 
@@ -50,15 +51,15 @@
 
   
 
-    var marker = new mapboxgl.Marker()
+    var marker = new mapboxgl.Marker( { color: 'darkred' })
         .setLngLat([-80.1578, 25.9124])
         .addTo(map);
 
-    var marker = new mapboxgl.Marker()
+    var marker = new mapboxgl.Marker({ color: 'darkred' })
         .setLngLat([-80.2543, 25.7494 ])
         .addTo(map); 
 
-    var marker = new mapboxgl.Marker()
+    var marker = new mapboxgl.Marker({ color: 'darkred' })
         .setLngLat([-80.3103, 25.9263])
         .addTo(map);
     
